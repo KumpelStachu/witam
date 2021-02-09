@@ -1,0 +1,51 @@
+https://github.com/kumpelstachu/witam/tree/master/programowanie/README.md
+
+# Brainfuck
+sudo apt-get install -y bf
+cd brainfuck
+bf src.bf
+
+# ASM
+sudo apt-get install -y nasm
+cd asm
+nasm -f elf64 src.asm
+ld src.o -o out
+./out
+
+# PSP C
+sudo add-apt-repository ppa:xuzhen666/ppsspp -y
+sudo apt-get update
+sudo apt-get install -y ppsspp
+
+sudo apt-get install -y make automake
+
+cd c
+git clone https://github.com/pspdev/psptoolchain
+cd psptoolchain
+sudo ./prepare-debian-ubuntu.sh -y
+sudo ./toolchain-sudo.sh
+export PSPDEV=/usr/local/pspdev
+export PATH=$PATH:$PSPDEV/bin
+
+cd ..
+git clone https://github.com/pspdev/pspsdk
+cd pspsdk
+./bootstrap
+./configure
+make
+sudo make install
+
+cd ..
+make
+ppsspp EBOOT.PBP
+
+# Shell
+sudo apt-get install -y chromium
+cd shell
+chmod +x chromium.sh
+./chromium.sh
+
+# Java(?)
+sudo apt-get install -y openjdk-11-jdk
+javac Main.java
+java Main

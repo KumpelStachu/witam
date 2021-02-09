@@ -1,3 +1,3 @@
 # Witam!
 
-[witam](https://kumpelstachu.github.io/witam)
+[programowanie](programowanie)
